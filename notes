@@ -1,0 +1,115 @@
+1 > Hoisting =  It is a js machanisum where variables and function  decleration are moved to the     
+                top of their scope befor the code execution.
+                
+                - two types
+                
+                1. function 
+                2. variable
+
+4 > this = The js this keyword refers to the object it belong to.
+
+    - it has diffrent values depending on where it used.
+
+    - Alone this refers to the global object.
+    
+    - In regular fun , this refers to the global object.
+
+    - In regular fun , in strict mode , this is undefined.
+
+    - In a method , this refers to the owner object.
+
+5 > Data Types =
+    - Number,string,boolean,undefined,null,symbol  = Primitive DT
+    - objects - object,function,array = Non-primitive , Refrence DT -> EveryThing treat as an object
+    // Primitive DT
+        let a = 10 ;
+        console.log(typeof(a))
+        let b = "hello" ;
+        console.log(typeof(b))
+        let c = false ;
+        console.log(typeof(c))
+        let d;
+        console.log(typeof(d))
+        let e = "" ;
+        console.log(typeof(e))
+
+    // Non-primitive DT -> all treated as object
+
+        console.log(typeof({})) /*object */
+        console.log(typeof([])) /*Array */
+        console.log(typeof( function(){})) /*Function */
+
+
+        const array = [ 1,2,3];
+        console.log(array)
+        console.log(array[1])
+
+        const obj = { 0:1, 1:1, 2:3 };
+        console.log(obj)
+        console.log(obj[2])
+
+    ~ isArray() method = determine wether an object is an array . return true is object is array either false .
+
+        const array = [1,2,3,4]
+
+        console.log(Array.isArray(array)) here Array. is constructor .
+
+6 > Callback Function = Any function that is passed as a argument ,is called a callback function.
+    A Callback fun is a function that is to be executed after another function has finished execution, hence the name is callback .
+    // In js we can assign a function to a variable ,Also as a method.
+    // Arrow Function
+    // Callback Function
+
+    const myName = () =>{
+        return("Satyam")
+    }
+
+
+
+    const perOne = (name,text) =>{
+        console.log(`Say hi ${name()} ${text} `)
+
+    }
+    perOne(myName,"thanq")
+
+
+    // myName function is pass as argument when callin the perOne Function  
+
+7 > Anonymous Function = A Function without name 
+    // Without Name
+    let sum = function(a,b)
+    {
+        let add = a+b;
+        console.log(add);
+
+    }
+    sum(5,4);
+    // here we assign ananymous fun to sum variable ,Now sum variable is act like a function
+
+8 > IIFE = 
+    - () is grouping operator
+    - IIFE (Immediatly Invoked Function Expression) is a js fun that runs as soon as it is defined.
+    - Also known as Self-Executing  Anonymous function .
+
+    eg - 
+        (function(text)
+        {
+            var name = "Aman";
+            console.log(`${name} ${text}`)
+        })("thanks");
+
+9 > Clouser = It is action that is inner Function can have access to the outer function variables/parameter well as all the global variables.
+            - A clouser is the combination of a function and the lexical environment with in which that function was declared.
+            
+            eg :
+            const outerFun = (b) =>
+            {
+                let a = 10 ;
+                const innerFun = ()=>
+                {
+                    let add = a+b;
+                    console.log(`Sum of Two Numbers : ${add}`)
+                }
+                innerFun()
+            }
+            outerFun(5)

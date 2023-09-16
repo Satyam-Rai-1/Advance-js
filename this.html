@@ -1,0 +1,42 @@
+<!--  Alone this refersh to the global obj. -->
+
+<script>
+    console.log(this)    /* global object (windows). */
+</script>
+
+
+<!-- regular fun , this refers to the global obj -->
+
+<script>
+    function sum()
+    {
+        add = 2+2;
+        console.log(add)   /* 4 */
+        console.log(this)  /* global object (windows). */
+    }
+    sum()
+</script>
+
+
+<!-- In method , this refers to the owner object   -->
+
+    <script>
+        const student = 
+        {
+            name : "Subham",
+            course : "MCA",
+            sum : function (a,b)
+            {
+                add = a+b;
+                console.log(add);    /* 25 */
+                console.log(this);   /* Owner object (student)*/
+                console.log(this.name);
+
+            }
+        }
+
+        student.sum(12,15);
+         
+        student.sum();  /* NaN  Because no arguments pass*/
+
+    </script>
